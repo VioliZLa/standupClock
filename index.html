@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>Stand-Up Reminder</title>
+  <link rel="stylesheet" href="styles.css?v=20241113">
+</head>
+<body>
+  <div id="app">
+    <main class="clock-face" id="clock">
+      <div class="clock-top">
+        <select class="interval-select" id="intervalSelect" title="Интервал на напомняне">
+          <option value="15">15 мин</option>
+          <option value="30">30 мин</option>
+          <option value="45">45 мин</option>
+          <option value="60" selected>60 мин</option>
+          <option value="90">90 мин</option>
+        </select>
+        <div class="clock-actions">
+          <button class="drag-handle" id="dragHandle" title="Премести часовника">⠿</button>
+          <button class="icon-button" id="pinButton" title="Задръж най-отгоре">📌</button>
+          <button class="icon-button" id="themeButton" title="Смени темата">🎨</button>
+          <button class="icon-button" id="noteButton" title="Бележка">📝</button>
+          <button class="primary-button" id="markButton" title="Отбележи, че се раздвижи" disabled>✓</button>
+          <button class="icon-button" id="minimizeButton" title="Минимизирай">—</button>
+          <button class="icon-button" id="closeButton" title="Затвори">×</button>
+        </div>
+      </div>
+            <div class="clock-display">
+              <div class="time" id="time">00:00</div>
+              <div class="seconds" id="seconds"></div>
+            </div>
+      <button class="clock-resize" id="resizeHandle" title="Преоразмери">⇲</button>
+    </main>
+  </div>
+
+  <div class="bubble" id="bubble"></div>
+
+  <div class="note-backdrop" id="noteBackdrop"></div>
+  <div class="note-connector" id="noteConnector"></div>
+  <aside class="note-drawer" id="noteDrawer" data-view="editor">
+    <div class="note-header">
+      <div class="note-title-area">
+        <span class="note-title">Най-важното за деня</span>
+        <span class="note-updated" id="noteUpdated"></span>
+      </div>
+      <div class="note-actions">
+        <button class="chip-button" id="noteChecklistAdd" title="Добави задача">+ Добави</button>
+        <button class="icon-button" id="noteMinimize" title="Минимизирай списъка">—</button>
+        <button class="icon-button" id="noteClose" title="Затвори">×</button>
+      </div>
+    </div>
+    <div class="note-body">
+        <div class="note-progress">
+          <div class="note-progress-header">
+            <span class="note-progress-label" id="noteProgressText">0% готово</span>
+            <span class="note-progress-count" id="noteProgressCount">0 / 0</span>
+          </div>
+          <div class="note-progress-bar">
+            <div class="note-progress-fill" id="noteProgressFill"></div>
+          </div>
+        </div>
+      <div class="note-list" id="noteList"></div>
+      <div class="note-editor" id="noteEditor">
+        <div class="note-checklist" id="noteChecklist"></div>
+      </div>
+    </div>
+  </aside>
+  <div class="note-resizer" id="noteResizer" title="Промени ширината"></div>
+
+  <div class="toast" id="celebrationToast">Йеей, страхотно се справи</div>
+
+  <script src="renderer.js?v=20241113"></script>
+</body>
+</html>

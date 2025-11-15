@@ -1,0 +1,12 @@
+{
+  "name": "standup-reminder",
+  "version": "1.0.0",
+  "description": "Малък десктоп часовник, който напомня да станеш и да се раздвижиш.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^31.0.0"
+  }
+}
